@@ -1,0 +1,73 @@
+:host > div {
+  padding: 20px;
+}
+
+.input-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-form-container {
+  display: grid;
+  gap: 20px;
+
+  padding: 0 20px 20px 20px;
+  border: 2px solid #8007;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.value-checker {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.layout {
+  display: grid;
+  gap: 20px;
+  /*  grid-template-areas: */
+  /*''*/
+  /*'';*/
+  /*  grid-auto-flow: row;*/
+  /*  grid-template-columns: auto auto;*/
+}
+
+.text-highlight {
+  color: cornflowerblue;
+}
+
+.pointing-line {
+  z-index: 1;
+  position: absolute;
+  pointer-events: none;
+
+  stroke: orangered;
+  stroke-width: 4px;
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.2s ease-in-out;
+}
+
+.show-line {
+  stroke-dashoffset: 0;
+}
+
+.support-overlay {
+  position: relative;
+}
+
+.locate-by-arrow {
+  margin-top: 75px;
+
+  opacity: 0;
+  transition: 1s;
+  transition-delay: 1s;
+}
+
+.show-code {
+  opacity: 1;
+}

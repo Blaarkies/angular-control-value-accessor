@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  color: #222;
+  margin: unset;
+  height: 100vh;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #222;
+  background: linear-gradient(#eeea, #fffa);
+  border: 1px solid #2222;
+  border-radius: 2px;
+  outline: unset;
+  transition: .2s;
+}
+
+button:hover {
+  filter: brightness(.9);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.97);
+  cursor: pointer;
+}
+
+code {
+  font-size: 1.2em;
+  background-color: #eee;
+  padding: 2px 8px;
+  border-radius: 6px;
+}

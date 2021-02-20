@@ -1,0 +1,45 @@
+.toolbar {
+  grid-area: toolbar;
+  background: conic-gradient(#eee, #ddd, whitesmoke, #eee);
+  padding: 1px 20px;
+  outline: 1px solid #4447;
+}
+
+.toolbar-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.toolbar-title>*:first-child {
+}
+
+.toolbar-title>*:last-child {
+  font-weight: 100;
+  color: #2227;
+}
+
+.left-sidebar {
+  grid-area: sidebar;
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 10px;
+  padding: 10px;
+  border-right: 1px solid #4447;
+  background-color: #ddd;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    'toolbar toolbar'
+    'sidebar route';
+  grid-auto-columns: 200px auto;
+  grid-auto-rows: max-content auto;
+
+  height: 100%;
+}
+
+.route {
+  grid-area: route;
+}

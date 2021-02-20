@@ -1,0 +1,43 @@
+<div class="layout">
+
+  <div class="input-form-container">
+    <h4>Please provide your details</h4>
+
+    <div class="input-container">
+      <span>Email</span>
+      <input type="email" id="mail"/>
+    </div>
+
+    <div class="input-container">
+      <span>Cellphone number</span>
+      <input type="number"/>
+    </div>
+  </div>
+
+  <div>
+    <div class="value-checker">
+      <button (click)="updateValueFromEmail()" class="support-overlay">
+        <span>Get Value</span>
+        <ng-container *ngTemplateOutlet="getValueInfo"></ng-container>
+      </button>
+      <span>Email input value: </span><span class="text-highlight"> {{emailValue}}</span>
+    </div>
+
+    <div class="locate-by-arrow" [class.show-code]="emailValue">
+      <code>document.getElementById('mail').value</code>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #getValueInfo>
+  <svg class="pointing-line"
+       [class.show-line]="emailValue"
+       width="100" height="100" viewBox="0 0 100 100">
+    <path d="M 5 5 C 40 0, -20 80, 60 95
+                   L 55 90
+                   L 50 97
+                   L 63 96
+" pathLength="1"/>
+  </svg>
+</ng-template>

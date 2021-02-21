@@ -1,0 +1,23 @@
+:host > div {
+  padding: 20px;
+}
+
+.layout {
+  width: 100%;
+  display: grid;
+  gap: 20px 80px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.monkey-telephone,
+.control-value-accessor {
+  width: auto;
+  height: max-content;
+}
+
+.monkey-telephone {
+
+}
+
+.control-value-accessor {
+}

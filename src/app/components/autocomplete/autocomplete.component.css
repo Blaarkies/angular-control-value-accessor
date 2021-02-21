@@ -1,0 +1,25 @@
+.layout {
+  width: max-content;
+  position: relative;
+}
+
+.dropdown-container {
+  position: absolute;
+  background-color: #fff;
+  display: grid;
+  grid-auto-rows: max-content;
+  height: 0;
+  transition: .3s ease-out;
+  transition-delay: .1s;
+  overflow-y: scroll;
+}
+
+.open {
+  height: 200px;
+}
+
+.dropdown-option {
+  outline: 1px solid #0001;
+  border-radius: unset;
+  background-color: #eee7;
+}

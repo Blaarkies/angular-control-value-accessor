@@ -7,10 +7,6 @@
   gap: 20px;
 }
 
-.text-highlight {
-  color: cornflowerblue;
-}
-
 .pointing-line {
   z-index: 1;
   position: absolute;

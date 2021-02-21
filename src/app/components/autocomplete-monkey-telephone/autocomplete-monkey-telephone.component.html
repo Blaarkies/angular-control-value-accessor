@@ -1,0 +1,16 @@
+<div class="layout">
+
+  <app-input-monkey-telephone #input
+                              [label]="label"
+                              [control]="controlInput">
+  </app-input-monkey-telephone>
+
+  <div class="dropdown-container" [class.open]="input.isActive">
+    <button class="dropdown-option"
+            *ngFor="let option of filteredOptions"
+            (click)="selectOption(option)">
+      {{option.label}}
+    </button>
+  </div>
+
+</div>

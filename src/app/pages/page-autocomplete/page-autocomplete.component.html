@@ -1,0 +1,59 @@
+<div>
+
+  <div class="layout">
+
+    <section class="input-form-container monkey-telephone">
+      <h4>Monkey Telephone Controls</h4>
+
+      <app-autocomplete-monkey-telephone label="Tree Address"
+                                         [control]="badControl"
+                                         [options]="trees">
+      </app-autocomplete-monkey-telephone>
+
+      <span class="text-highlight">{{badControl.value | json}}</span>
+
+      <div class="explain-bubble">
+        <div>
+          Multiple levels of components connect each other's controls.
+          This propagates the selected option back up the chain.
+        </div>
+        <br>
+
+        <div><code>&lt;app-autocomplete [control]="myControl" [options]="trees"></code></div>
+        <div>   ⏬</div>
+        <div><code>&lt;app-input [control]="controlInput"></code></div>
+        <div>   ⏬</div>
+        <div><code>&lt;input [formControl]="control"/></code></div>
+        <br>
+
+        <div>
+          We lose a lot of <i>control</i> over the features provided by Reactive Forms, since we have to link every
+          aspect of a FormControl down to the foundational components:
+        </div>
+        <ul>
+          <li>Need to implement setters for attributes like disable, readonly, placeholder, etc.</li>
+          <li>Cannot easily update validators, the lower controls will also try to run these validators</li>
+          <li>This circumvents the entire idea behind abstracting the input logic away into a neat package</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="input-form-container control-value-accessor">
+      <h4>Control Value Accessor</h4>
+
+      <app-autocomplete label="Tree Address"
+                        [formControl]="goodControl"
+                        [options]="trees">
+      </app-autocomplete>
+
+      <span class="text-highlight">{{goodControl.value | json}}</span>
+
+      <div class="explain-bubble">
+
+      </div>
+    </section>
+
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+<div class="padding-gap">
+  <label>{{label}}</label>
+  <input autocomplete="off"
+         [formControl]="control"
+         (focus)="isActive = true"
+         (blur)="isActive = false"/>
+</div>

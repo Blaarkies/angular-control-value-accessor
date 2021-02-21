@@ -55,3 +55,14 @@ code {
   gap: 10px;
   align-items: center;
 }
+
+.text-highlight {
+  color: cornflowerblue;
+}
+
+.explain-bubble {
+  border-radius: 10px;
+  background-color: #4FDD2A20;
+  margin: 0 -14px -14px -14px;
+  padding: 6px;
+}

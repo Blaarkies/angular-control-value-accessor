@@ -1,0 +1,31 @@
+:host > div {
+  padding: 20px;
+}
+
+.layout {
+  width: 100%;
+  display: grid;
+  gap: 20px 80px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.template-driven {
+  grid-column: 1;
+}
+
+.reactive-driven {
+  grid-column: 2;
+}
+
+.template-driven,
+.reactive-driven { /*force minimal size on elements*/
+  width: auto;
+  height: max-content;
+}
+
+.explain-bubble {
+  border-radius: 10px;
+  background-color: #4FDD2A20;
+  margin: 0 -14px -14px -14px;
+  padding: 6px;
+}

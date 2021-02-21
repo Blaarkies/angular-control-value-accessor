@@ -1,31 +1,35 @@
-<div class="layout">
+<div>
 
-  <div class="input-form-container">
-    <h4>Please provide your details</h4>
+  <div class="layout">
 
-    <div class="input-container">
-      <span>Email</span>
-      <input type="email" id="mail"/>
+    <div class="input-form-container">
+      <h4>Please provide your details</h4>
+
+      <div class="input-container">
+        <span>Email</span>
+        <input type="email" id="mail"/>
+      </div>
+
+      <div class="input-container">
+        <span>Cellphone number</span>
+        <input type="number"/>
+      </div>
     </div>
 
-    <div class="input-container">
-      <span>Cellphone number</span>
-      <input type="number"/>
-    </div>
-  </div>
+    <div>
+      <div class="value-checker">
+        <button (click)="updateValueFromEmail()" class="support-overlay">
+          <span>Get Value</span>
+          <ng-container *ngTemplateOutlet="getValueInfo"></ng-container>
+        </button>
+        <span>Email input value: </span><span class="text-highlight">{{emailValue}}</span>
+      </div>
 
-  <div>
-    <div class="value-checker">
-      <button (click)="updateValueFromEmail()" class="support-overlay">
-        <span>Get Value</span>
-        <ng-container *ngTemplateOutlet="getValueInfo"></ng-container>
-      </button>
-      <span>Email input value: </span><span class="text-highlight"> {{emailValue}}</span>
+      <div class="locate-by-arrow" [class.show-code]="emailValue">
+        <code>document.getElementById('mail').value</code>
+      </div>
     </div>
 
-    <div class="locate-by-arrow" [class.show-code]="emailValue">
-      <code>document.getElementById('mail').value</code>
-    </div>
   </div>
 
 </div>

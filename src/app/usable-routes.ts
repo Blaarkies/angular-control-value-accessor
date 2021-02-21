@@ -1,3 +1,4 @@
 export enum UsableRoutes {
-  NativeInput = 'native-input',
+  NativeInputs = 'native-inputs',
+  AngularInputs = 'angular-inputs',
 }

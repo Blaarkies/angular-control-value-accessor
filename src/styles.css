@@ -9,15 +9,15 @@ button {
   padding: 10px 20px;
   font-size: 1em;
   color: #222;
-  background: linear-gradient(#eeea, #fffa);
-  border: 1px solid #2222;
-  border-radius: 2px;
+  background-color: #03afff70;
+  border: unset;
+  border-radius: 6px;
   outline: unset;
   transition: .2s;
 }
 
 button:hover {
-  filter: brightness(.9);
+  filter: brightness(.8);
   cursor: pointer;
 }
 
@@ -31,4 +31,27 @@ code {
   background-color: #eee;
   padding: 2px 8px;
   border-radius: 6px;
+}
+
+.input-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-form-container {
+  display: grid;
+  gap: 20px;
+
+  padding: 0 20px 20px 20px;
+  border: 2px solid #8007;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.value-checker {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

@@ -4,7 +4,7 @@ String.prototype.isNullOrEmpty = function (this: string): boolean {
   return !this;
 };
 
-String.prototype.fuzzyEqual = function (this: string, search: string): boolean {
+String.prototype.fuzzyMatch = function (this: string, search: string): boolean {
   const cleanThis = this.trim().toLowerCase();
   const cleanSearch = search.trim().toLowerCase();
   if (cleanThis.includes(cleanSearch)) {
@@ -12,5 +12,20 @@ String.prototype.fuzzyEqual = function (this: string, search: string): boolean {
   }
 
   return cleanSearch.match(/\S+/g)
-    .some(word => cleanThis.includes(word));
+    .every(word => cleanThis.includes(word));
+};
+
+String.prototype.relevanceScore = function (this: string, search: string): number {
+  const cleanThis = this.trim().toLowerCase();
+  const cleanSearch = search.trim().toLowerCase();
+
+  let relevanceScore = 0;
+  relevanceScore += cleanThis.includes(cleanSearch) ? 1 : 0;
+
+  const searchWords = cleanSearch.match(/\S+/g);
+  if (searchWords) {
+    relevanceScore += searchWords.count(word => cleanThis.includes(word));
+  }
+
+  return relevanceScore;
 };

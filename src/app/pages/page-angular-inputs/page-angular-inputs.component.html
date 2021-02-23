@@ -16,9 +16,9 @@
       </div>
 
       <div class="explain-bubble">
-        <code>&lt;input type="email" [(ngModel)]="myEmail"/></code>
+        <span>HTML usage: </span><code>&lt;input type="email" [(ngModel)]="myEmail"/></code>
         <br><br>
-        <div>[(ngModel)] uses 'banana-in-a-box' syntax:</div>
+        <div><code>[(ngModel)]</code> uses 'banana-in-a-box' syntax:</div>
 
         <ul>
           <li>🍌 bananas 👉   )   (</li>
@@ -41,9 +41,12 @@
           </li>
         </ul>
 
-        <div>This can also be used on custom Angular components</div>
-        <div>Allows direct access to modify data in your template, but are less explicit</div>
-        <div>Validation logic is spread across lots of HTML code</div>
+        <div>Features:</div>
+        <ul>
+          <li>Can also be used on custom Angular components</li>
+          <li>Allows direct access to modify data in your template, but are less explicit</li>
+          <li>Validation logic is spread across lots of HTML code</li>
+        </ul>
       </div>
     </section>
 
@@ -69,7 +72,7 @@
           with validation logic that range from simple to complex cases:
         </div>
         <ul>
-          <li>A simple required: <br><code>new FormControl(null, Validators.required);</code></li>
+          <li>Simply required: <br><code>new FormControl(null, Validators.required);</code></li>
           <li>Letters only regex pattern: <br><code>new FormControl(null, Validators.pattern('^[a-zA-Z]+$'));</code>
           </li>
           <li>
@@ -78,10 +81,13 @@
           </li>
         </ul>
 
-        <div>Provides more predictability with synchronous access to the data model</div>
-        <div>
-          Validation logic can be extended, and interdependent inputs can be validated against each other easily
-        </div>
+        <div>Features:</div>
+        <ul>
+          <li>Provides more predictability with synchronous access to the data model</li>
+          <li>
+            Validation logic can be extended, and interdependent inputs can easily be validated against each other
+          </li>
+        </ul>
       </div>
     </section>
 

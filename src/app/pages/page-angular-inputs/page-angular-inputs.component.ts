@@ -24,4 +24,5 @@ export class PageAngularInputsComponent {
   randomizeMyEmailControl() {
     this.myEmailControl.setValue(this.getRandomEmailString());
   }
+
 }

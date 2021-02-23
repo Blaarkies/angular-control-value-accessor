@@ -7,6 +7,8 @@ import { UsableRoutes } from './usable-routes';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
   title = 'angular-control-value-accessor';
   routes = UsableRoutes;
+
 }

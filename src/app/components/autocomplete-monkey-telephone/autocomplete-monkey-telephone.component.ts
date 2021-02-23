@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { LabeledOption } from '../../common/domain/labeled.option';
   templateUrl: './autocomplete-monkey-telephone.component.html',
   styleUrls: ['./autocomplete-monkey-telephone.component.css'],
 })
-export class AutocompleteMonkeyTelephoneComponent implements OnInit, OnDestroy {
+export class AutocompleteMonkeyTelephoneComponent {
 
   @Input() label: string;
 
@@ -25,7 +25,7 @@ export class AutocompleteMonkeyTelephoneComponent implements OnInit, OnDestroy {
     this.controlInput.valueChanges
       .pipe(takeUntil(this.unsubscribeValueChanges$))
       .subscribe(search =>
-        this.filteredOptions = this._options.filter(o => o.label.fuzzyEqual(search)));
+        this.filteredOptions = this._options.filter(o => o.label.fuzzyMatch(search)));
   }
 
   private _options: LabeledOption<any>[];
@@ -36,12 +36,6 @@ export class AutocompleteMonkeyTelephoneComponent implements OnInit, OnDestroy {
   filteredOptions: LabeledOption<any>[];
   controlInput = new FormControl();
   unsubscribeValueChanges$ = new Subject();
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   ngOnDestroy(): void {
     this.unsubscribeValueChanges$.next();

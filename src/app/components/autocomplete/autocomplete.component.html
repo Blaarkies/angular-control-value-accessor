@@ -1,11 +1,8 @@
 <div class="layout">
 
-  <app-input #input
-              [label]="label"
-              [control]="controlInput">
-  </app-input>
+  <app-input #inputRef [label]="label"></app-input>
 
-  <div class="dropdown-container" [class.open]="input.isActive">
+  <div class="dropdown-container" [class.open]="inputRef.isActive">
     <button class="dropdown-option"
             *ngFor="let option of filteredOptions"
             (click)="selectOption(option)">

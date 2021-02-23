@@ -32,7 +32,7 @@
         </div>
         <ul>
           <li>Need to implement setters for attributes like disable, readonly, placeholder, etc.</li>
-          <li>Cannot easily update validators, the lower controls will also try to run these validators</li>
+          <li>Cannot easily update validators; the lower controls will try to run these validators</li>
           <li>This circumvents the entire idea behind abstracting the input logic away into a neat package</li>
         </ul>
 
@@ -46,11 +46,27 @@
                         [formControl]="goodControl"
                         [options]="trees">
       </app-autocomplete>
-
       <span class="text-highlight">{{goodControl.value | json}}</span>
 
       <div class="explain-bubble">
+        <div>
+          A single form control is used, which returns only the <b>selected</b> value. The user's typed in string input
+          will not appear since the autocomplete is only concerned with the selected object.
+        </div><br>
 
+        <div>
+          <code>&lt;app-autocomplete></code> interfaces directly with the <code>&lt;input></code> element, without
+          going through multiple levels of form controls.
+        </div>
+
+        <div>
+          <span>We gain low-level control over the HTML elements:</span>
+          <ul>
+            <li>Hide lower level string input values from the autocomplete component usage</li>
+            <li>Define where and how validation errors should be displayed</li>
+            <li>Component works correctly in both Reactive and Template-driven forms</li>
+          </ul>
+        </div>
       </div>
     </section>
 

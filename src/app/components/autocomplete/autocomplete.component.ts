@@ -1,6 +1,8 @@
-import { ChangeDetectorRef, Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ChangeDetectorRef, Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { LabeledOption } from '../../common/domain/labeled.option';
+import { BasicValueAccessor } from '../../common/domain/basic-value-accessor';
+import { InputComponent } from '../input/input.component';
 
 @Component({
   selector: 'app-autocomplete',
@@ -9,50 +11,55 @@ import { LabeledOption } from '../../common/domain/labeled.option';
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => AutocompleteComponent),
-    multi: true
+    multi: true,
   }],
 })
-export class AutocompleteComponent implements OnInit, ControlValueAccessor {
+export class AutocompleteComponent extends BasicValueAccessor implements OnInit {
 
-  @Input() label: FormControl;
+  @Input() label: string;
 
-  private _options: LabeledOption<any>[];
   @Input() set options(value: LabeledOption<any>[]) {
     this._options = this.filteredOptions = value;
   }
 
+  @ViewChild(InputComponent, {static: true}) inputComponent: InputComponent;
+
+  private _options: LabeledOption<any>[];
   filteredOptions: LabeledOption<any>[];
-  controlInput = new FormControl();
 
-  private value: any;
-  private _onChange: (value: any) => void;
-  private _onTouched: any;
-  private disabled: boolean;
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(private _changeDetectorRef: ChangeDetectorRef, private _self: ElementRef) {
+    super();
   }
 
   ngOnInit() {
+    this.inputComponent.registerOnChange(search => {
+      this.filteredOptions = this._options.sortByRelevance(o => o.label.relevanceScore(search));
+      this.writeValue(null);
+    });
   }
 
   selectOption(option: LabeledOption<any>) {
-    this.writeValue(option);
+    this.writeValue(option.value);
+
+    this.inputComponent.writeValue(option.label);
   }
 
-  writeValue(obj: any) {
-    this.value = obj;
+  writeValue(value: any) {
+    this.value = value;
+    this.onChange && this.onChange(value);
   }
 
-  registerOnChange(fn: (value: any) => void) {
-    this._onChange = fn;
+  registerOnChange(fn: any) {
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: any) {
-    this._onTouched = fn;
+    this.onTouched = fn;
   }
 
   setDisabledState(isDisabled: boolean) {
-    this.disabled = isDisabled;
+    this._self.nativeElement.disabled = isDisabled;
+    this.inputComponent.setDisabledState(isDisabled);
     this._changeDetectorRef.markForCheck();
   }
 

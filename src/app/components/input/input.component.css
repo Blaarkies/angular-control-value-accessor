@@ -2,3 +2,13 @@
   display: flex;
   gap: 10px;
 }
+
+.ng-valid,
+.ng-invalid,
+.ng-pending,
+.ng-pristine,
+.ng-dirty,
+.ng-untouched,
+.ng-touched {
+  background-color: maroon;
+}

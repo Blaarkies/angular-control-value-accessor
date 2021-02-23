@@ -1,7 +1,10 @@
 <div class="padding-gap">
   <label>{{label}}</label>
-  <input autocomplete="off"
-         [formControl]="control"
+  <input #input
+         type="text"
+         autocomplete="off"
          (focus)="isActive = true"
-         (blur)="isActive = false"/>
+         (blur)="isActive = false"
+         (input)="userInputChange($any($event).currentTarget.value)"
+  />
 </div>

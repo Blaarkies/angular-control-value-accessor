@@ -4,7 +4,9 @@ declare global {
   interface String {
     isNullOrEmpty(this: string): boolean;
 
-    fuzzyEqual(this: string, search: string): boolean;
+    fuzzyMatch(this: string, search: string): boolean;
+
+    relevanceScore(this: string, search: string): number;
   }
 
   interface Number {
@@ -13,6 +15,10 @@ declare global {
 
   interface Array<T> {
     shuffle(this: Array<T>): Array<T>;
+
+    sortByRelevance(this: Array<T>, callback: (item) => number): Array<T>;
+
+    count(this: Array<T>, callback: (item) => boolean): number;
   }
 
 }

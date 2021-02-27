@@ -11,6 +11,8 @@ import { AutocompleteMonkeyTelephoneComponent } from './components/autocomplete-
 import { InputMonkeyTelephoneComponent } from './components/autocomplete-monkey-telephone/input-monkey-telephone/input-monkey-telephone.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { InputComponent } from './components/input/input.component';
+import { PageCustomControlsComponent } from './pages/page-custom-controls/page-custom-controls.component';
+import { InputSpeechComponent } from './components/input-speech/input-speech.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { InputComponent } from './components/input/input.component';
     InputMonkeyTelephoneComponent,
     AutocompleteComponent,
     InputComponent,
+    PageCustomControlsComponent,
+    InputSpeechComponent,
   ],
   imports: [
     BrowserModule,

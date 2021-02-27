@@ -1,0 +1,13 @@
+<div class="padding-gap size-constraint">
+  <label>{{label}}</label>
+  <span class="speech-bubble">{{value}}</span>
+  <button (click)="startInput()"
+          [class.pending]="status.pending"
+          [disabled]="status.pending">
+    🎤
+  </button>
+  <div class="confidence-level"
+       [style.height.px]="confidence * 41"
+       [style.background]="'hsl('+ confidence * 120 +',70%,50%)'"
+  ></div>
+</div>

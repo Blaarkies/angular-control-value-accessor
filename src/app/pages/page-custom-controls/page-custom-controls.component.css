@@ -1,0 +1,15 @@
+:host > div {
+  padding: 20px;
+}
+
+.layout {
+  width: 100%;
+  display: grid;
+  gap: 20px 80px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.layout > section {
+  width: auto;
+  height: max-content;
+}

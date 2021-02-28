@@ -21,4 +21,10 @@ declare global {
     count(this: Array<T>, callback: (item) => boolean): number;
   }
 
+  interface Object {
+    let(this: Object, callback: (it) => any): any;
+
+    also(this: Object, callback: (it) => any): Object;
+  }
+
 }

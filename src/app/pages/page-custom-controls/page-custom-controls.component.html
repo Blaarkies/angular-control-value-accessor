@@ -10,6 +10,22 @@
         <code>speechControl.value</code>: <span class="text-highlight">{{speechControl.value}}</span>
       </div>
     </section>
+
+    <section class="input-form-container">
+      <h4>Draw</h4>
+
+      <app-input-draw label="Figure" [formControl]="drawControl"></app-input-draw>
+
+      <div>
+        <code>drawControl.value</code>: <span class="text-highlight">
+        <pre *ngIf="drawControl.value" class="ensure-short-line">
+          <span>height: {{drawControl.value.height}}</span>
+          <span>width:  {{drawControl.value.width}}</span>
+          <span>data:   {{drawControl.value.data.slice(0, 100)}}...</span>
+        </pre>
+      </span>
+      </div>
+    </section>
   </div>
 
 </div>

@@ -13,6 +13,7 @@ import { AutocompleteComponent } from './components/autocomplete/autocomplete.co
 import { InputComponent } from './components/input/input.component';
 import { PageCustomControlsComponent } from './pages/page-custom-controls/page-custom-controls.component';
 import { InputSpeechComponent } from './components/input-speech/input-speech.component';
+import { InputDrawComponent } from './components/input-draw/input-draw.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InputSpeechComponent } from './components/input-speech/input-speech.com
     InputComponent,
     PageCustomControlsComponent,
     InputSpeechComponent,
+    InputDrawComponent,
   ],
   imports: [
     BrowserModule,

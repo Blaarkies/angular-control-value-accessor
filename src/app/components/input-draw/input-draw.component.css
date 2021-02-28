@@ -1,0 +1,9 @@
+canvas {
+  border-radius: 2px;
+  border: 1px solid #0003;
+}
+
+.disabled {
+  opacity: .5;
+  cursor: no-drop;
+}

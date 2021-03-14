@@ -5,6 +5,25 @@
   outline: 1px solid #4447;
 }
 
+.github-icon {
+  height: 50px;
+  width: 50px;
+  background-color: #333;
+  border-radius: 50px;
+  border: 2px solid #333;
+  box-shadow: 1px 1px 3px 3px #3333;
+  transition: .15s ease-in-out;
+}
+
+.github-icon:hover {
+  transform: scale(.95);
+}
+
+.github-icon > img {
+  height: 50px;
+  width: 50px;
+}
+
 .toolbar-title {
   display: flex;
   align-items: center;

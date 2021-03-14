@@ -1,6 +1,18 @@
 <div>
 
+  <h2>Custom Inputs</h2>
+
   <div class="layout">
+    <section class="input-form-container">
+      <h4>Puzzle</h4>
+
+      <app-input-puzzle label="Puzzle" blocks="1234" [formControl]="puzzleControl"></app-input-puzzle>
+
+      <div>
+        <code>puzzleControl.value</code>: <span class="text-highlight">{{puzzleControl.value}}</span>
+      </div>
+    </section>
+
     <section class="input-form-container">
       <h4>Speech</h4>
 

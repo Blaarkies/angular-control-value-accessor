@@ -1,0 +1,21 @@
+<div class="padding-gap">
+  <label>{{label}}</label>
+
+  <div class="puzzle-board"
+       [class.disabled]="disabled"
+       [style.grid-template-columns]="'repeat(' + tiles.length + ',1fr)'"
+       (keydown.arrowUp)="moveTile([0, -1]); $event.preventDefault()"
+       (keydown.arrowLeft)="moveTile([-1, 0]); $event.preventDefault()"
+       (keydown.arrowDown)="moveTile([0, 1]); $event.preventDefault()"
+       (keydown.arrowRight)="moveTile([1, 0]); $event.preventDefault()">
+
+    <button class="puzzle-tile"
+            *ngFor="let tile of tiles"
+            [class.invalid-move]="tile.invalidMovementAttempt"
+            [style.grid-column]="tile.location[0] + 1"
+            [style.grid-row]="tile.location[1] + 1"
+            (focus)="focusTile$.next(tile)">
+      {{tile.label}}
+    </button>
+  </div>
+</div>

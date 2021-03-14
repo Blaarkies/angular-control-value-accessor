@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class PageCustomControlsComponent implements OnInit {
 
+  puzzleControl = new FormControl();
   speechControl = new FormControl();
   drawControl = new FormControl();
 

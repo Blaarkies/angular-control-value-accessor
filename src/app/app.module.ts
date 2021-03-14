@@ -14,6 +14,7 @@ import { InputComponent } from './components/input/input.component';
 import { PageCustomControlsComponent } from './pages/page-custom-controls/page-custom-controls.component';
 import { InputSpeechComponent } from './components/input-speech/input-speech.component';
 import { InputDrawComponent } from './components/input-draw/input-draw.component';
+import { InputPuzzleComponent } from './components/input-puzzle/input-puzzle.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { InputDrawComponent } from './components/input-draw/input-draw.component
     PageCustomControlsComponent,
     InputSpeechComponent,
     InputDrawComponent,
+    InputPuzzleComponent,
   ],
   imports: [
     BrowserModule,

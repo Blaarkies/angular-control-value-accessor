@@ -66,3 +66,13 @@ code {
   margin: 0 -14px -14px -14px;
   padding: 6px;
 }
+
+.overlap-container {
+  display: grid;
+}
+
+.overlap-container > * {
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+

@@ -7,11 +7,12 @@ import { PageAutocompleteComponent } from './pages/page-autocomplete/page-autoco
 import { PageCustomControlsComponent } from './pages/page-custom-controls/page-custom-controls.component';
 
 const routes: Routes = [
-  {path: '', component: PageNativeInputsComponent},
   {path: UsableRoutes.NativeInputs, component: PageNativeInputsComponent},
   {path: UsableRoutes.AngularInputs, component: PageAngularInputsComponent},
   {path: UsableRoutes.Autocomplete, component: PageAutocompleteComponent},
   {path: UsableRoutes.CustomControl, component: PageCustomControlsComponent},
+
+  {path: '**', redirectTo: UsableRoutes.NativeInputs},
 ];
 
 @NgModule({

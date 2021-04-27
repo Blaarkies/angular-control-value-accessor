@@ -48,6 +48,16 @@
   background-color: #ddd;
 }
 
+.slides {
+  width: 100%;
+  margin-bottom: 40px;
+  text-decoration: none;
+}
+
+.slides button {
+  width: 100%;
+}
+
 .layout {
   display: grid;
   grid-template-areas:

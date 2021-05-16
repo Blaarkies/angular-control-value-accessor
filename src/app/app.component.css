@@ -50,12 +50,16 @@
 
 .slides {
   width: 100%;
-  margin-bottom: 40px;
-  text-decoration: none;
 }
 
 .slides button {
   width: 100%;
+}
+
+.video button {
+  width: 100%;
+  margin-bottom: 40px;
+  text-decoration: none;
 }
 
 .layout {
